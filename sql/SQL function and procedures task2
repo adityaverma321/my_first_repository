@@ -8,4 +8,4 @@ Write pl SQL block to make an invoice where customer of ordering the product.
 
 Make two procedures
 1 display the list of order placed by the customer (history)
-2 
+2 display the order details based on orderid
