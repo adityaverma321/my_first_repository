@@ -1,0 +1,26 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+7) Use While loop to generate random numbers and maintain a running sum of these values. Terminate when the sum exceeds 20. (Note: use Math. random() method to obtain numbers.)
+
+Code :
+class Random{
+    public static void main(String[] args){
+        int sum = 0;
+        int i = 0;
+	   System.out.print("Random numbers are : ");
+        while(sum < 20){
+			i = (int)(Math.random()*10);
+			System.out.print(i+",  ");
+            	sum += i;
+        }
+		System.out.println();
+		System.out.println("Their sum is : "+sum);  
+    }
+}
+
+Output : 
+Random numbers are : 3,  0,  9,  3,  7,
+Their sum is : 22

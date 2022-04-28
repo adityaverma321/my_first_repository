@@ -1,0 +1,28 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+6) WAP in JAVA that calculates the VAT on an amount of sale. The program takes amount of
+sales and VAT rate as input and outputs the total amount
+inclusive of VAT.
+
+Code :
+import java.util.*;
+class Sales{
+    public static void main(String[] args){
+        float sales, vat, total;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter sales: ");
+        sales = sc.nextFloat();
+        System.out.print("Enter vat: ");
+        vat = sc.nextFloat();
+        total = sales + (sales * vat / 100);
+        System.out.println("Total: " + total);
+    }
+}
+
+Output :
+Enter sales: 150
+Enter vat: 7
+Total: 160.5

@@ -1,0 +1,33 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+9) Write a java program to calculate Simple Interest using Command Line Arguments. (Hint use Wrapper classes)
+
+Code :
+class Simpleinterest{
+    public static void main(String[] args){
+        if(args.length == 3){
+            double principal = Double.parseDouble(args[0]);
+            double rate = Double.parseDouble(args[1]);
+            int years = Integer.parseInt(args[2]);
+            double si = principal * rate * years / 100;
+		 double total_amount = principal + si;
+		 System.out.println("Principal is " + principal);
+		 System.out.println("Rate of Interest is " + rate);
+		 System.out.println("Number of Years is " + years +"\n");
+            System.out.println("Simple Interest is " + si);
+            System.out.println("Total amount is " + total_amount);
+        }
+    }
+}
+
+Output :
+C:\Users\aditya\Desktop\MCA\SEM 2\JAVA\Practical Assignments>java simpleinterest 15000 5 2
+Principal is 15000.0
+Rate of Interest is 5.0
+Number of Years is 2
+
+Simple Interest is 1500.0
+Total amount is 16500.0

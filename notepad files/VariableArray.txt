@@ -1,0 +1,70 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+2.	Write a program in Java to create variable size array. Data can be numeric.
+•	Flush an array
+•	add a number at a specified location in an array.
+•	display the array
+
+Code :
+import java.util.Scanner;
+public class VariableArray {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("How many elements you want to enter : ");
+        int size = sc.nextInt();
+        int arr[] = new int[25]; 
+        System.out.println("Enter array elements : ");
+        for (int i = 0; i < size; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // print array elements
+        System.out.println("Array elements are : ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        
+        // insert element at given index
+        System.out.print("\nEnter index to insert element : ");
+        int index = sc.nextInt();
+        System.out.print("Enter element to insert : ");
+        int element = sc.nextInt();
+        arr[index] = element;
+
+        // print array elements
+        System.out.println("\nArray elements after insertion are : ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        // flush all array elements
+        System.out.println("\nArray elements after flushing are : ");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = 0;
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+Output :
+How many elements you want to enter : 5
+Enter array elements : 
+2
+4
+5
+6
+8
+Array elements are : 
+2 4 5 6 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Enter index to insert element : 10
+Enter element to insert : 15
+
+Array elements after insertion are :
+2 4 5 6 8 0 0 0 0 0 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+Array elements after flushing are :
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

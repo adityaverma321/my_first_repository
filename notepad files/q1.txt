@@ -1,0 +1,28 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+1) Write a program to print the following pattern :
+	****
+	***
+	**
+	*
+
+Code :
+class Pattern{
+	public static void main(String args[]){
+		for(int i=4;i>0;i--){
+			for (int j = 0;j<i;j++){
+				System.out.print("*");
+			}
+		System.out.println("\n");
+		}
+	}
+}
+
+Output :
+	****
+	***
+	**
+	*

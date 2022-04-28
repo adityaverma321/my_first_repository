@@ -1,0 +1,54 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+3) Write an application that generates the first 15 numbers in the Fibonacci series and first 15
+prime numbers.
+
+Code :
+class Fiboandprime{
+	static void fibonacci(){
+		int n1 = 0;
+		int n2 = 1;
+		int temp;
+		System.out.println("First 15 Fibonacci numbers are : ");
+		System.out.print(n1+"  "+n2+"  ");
+		for (int  i = 0;i<13;i++){
+			temp = n1;
+			n1 = n2;
+			n2 = n1 + temp;
+			System.out.print(n2+"  ");
+		}
+	}
+	static void prime(){
+		int ct=0,n=0,i=1,j=1;
+		System.out.println("First 15 Prime numbers are : ");
+		while(n<15){  
+			j=1;  
+			ct=0;  
+			while(j<=i){  
+				if(i%j==0)  
+				ct++;  
+				j++;   
+			}  
+			if(ct==2){  
+				System.out.print(i+"  ");  
+				n++;  
+			}  
+        i++;  
+        }
+	}
+	public static void  main(String args[]){
+		fibonacci();
+		System.out.println("\n");
+		prime();
+	}
+}
+
+Output :
+First 15 Fibonacci numbers are :
+0  1  1  2  3  5  8  13  21  34  55  89  144  233  377
+
+First 15 Prime numbers are :
+2  3  5  7  11  13  17  19  23  29  31  37  41  43  47

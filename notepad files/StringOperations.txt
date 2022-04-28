@@ -1,0 +1,56 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+4.	Write and run a JAVA program that reads a string from the user and perform the following.
+•	counts number of occurance of a given character (for example, " a") in a string.
+•	searches the last occurance of a character in a string.
+•	removes the unneccessary spaces from a string : leading and trailing spaces.
+•	displays the substring formed by the last ten characters of a string
+
+Code : 
+class StringOperations{
+    public static void main(String args[]) {
+        System.out.print("Enter a string : ");
+        String str = System.console().readLine();
+
+        // removing all unnecessary spaces
+        str = str.trim();
+        System.out.println("Trimmed string is : "+str);
+
+        // count number of occurrences of a character in a string
+        System.out.print("Enter a character to count all occurences : ");
+        char ch = System.console().readLine().charAt(0);
+        int count = 0;
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)==ch){
+                count++;
+            }
+        }
+        System.out.println("Number of occurrences of "+ch+" in "+str+" is "+count);
+
+        // search the last occurrence of a character in a string
+        System.out.print("Enter a character to find it's last occurence : ");
+        ch = System.console().readLine().charAt(0);
+        int index = -1;
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)==ch){
+                index=i;
+            }
+        }
+        System.out.println("Last occurrence of "+ch+" in "+str+" is at index "+index);
+                
+        // make substring of last 10 characters
+        System.out.println("Last 10 characters are : "+str.substring(str.length()-10));
+    }
+}
+
+Output :
+Enter a string :         welcome to java programming        
+Trimmed string is : welcome to java programming
+Enter a character to count all occurences : m
+Number of occurrences of m in welcome to java programming is 3
+Enter a character to find it's last occurence : r
+Last occurrence of r in welcome to java programming is at index 20
+Last 10 characters are : rogramming

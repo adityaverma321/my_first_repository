@@ -1,0 +1,24 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+2) Write a program that reads a distance in kilometers from the keyboard and output the distance
+as miles.
+
+Code :
+import java.util.*;
+class Miles{
+	public static void main(String args[]){
+		Scanner scan = new Scanner(System.in);
+		double km,miles;
+		System.out.print("Enter distance in Kilometers : ");
+		km = scan.nextDouble();
+		miles = km*0.6;
+		System.out.println(km + " KM is "+miles+" miles");
+	}
+}
+
+Output :
+	Enter distance in Kilometers : 25
+	25.0 KM is 15.0 miles
