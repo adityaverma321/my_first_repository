@@ -2,3 +2,33 @@ Name : Aditya Verma
 Roll No. : 42
 Subject : Operating Systems
 Class : MCA 2
+
+Q13 : . The script will receive the filename or filename with its full path, the script should obtain information about this file as given by "ls -l" and display it in proper format.
+e.g., Filename : , File access permissions : , Number of links : , Owner of the file : , Group to which belongs : Size of file : , File modification date : , File modification time : .
+
+Code : 
+
+read -p "Enter filename : " fname
+if [ -e $fname ]
+then
+    echo "Filename : $fname"
+    echo "File permissions : $(ls -l $fname | cut -c 2-10)"
+    echo "Number of links : $(ls -l $fname | cut -c 12)"
+    echo "File owner name : $(ls -l $fname | cut -d " " -f 3)"
+    echo "Group to which file belongs : $(ls -l $fname | cut -d " " -f 4)"
+    echo "Size of file : $(ls -l $fname | cut -d " " -f 5)"
+    echo "Modification date : $(ls -l $fname | cut -d " " -f 6,7)"
+    echo "Modification time : $(ls -l $fname | cut -d " " -f 8)"
+fi
+
+Output :
+
+Enter filename : demo.txt
+Filename : demo.txt
+File permissions : rwxrwxrwx
+Number of links : 1
+File owner name : root
+Group to which file belongs : root
+Size of file : 74
+Modification date : Jun 12
+Modification time : 11:58
