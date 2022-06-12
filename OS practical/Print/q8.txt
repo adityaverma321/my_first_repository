@@ -1,0 +1,29 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Operating Systems
+Class : MCA 2
+
+Q8 : Write a script to check the string entered by user is palindrome or not.
+
+Code :
+
+echo "Enter a String"
+read string
+rev=""
+len=${#string}
+for ((i = $len - 1; i >= 0; i--))
+do
+	rev=$rev${string:$i:1}
+done
+if [ $string == $rev ]
+	then
+	echo  "Given string is palindrome"
+else
+	echo "given string is not palindrome"
+fi
+
+Output :
+
+Enter a String
+level
+Given string is palindrome

@@ -1,0 +1,84 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Operating Systems
+Class : MCA 2
+
+Q1 : Write a menu driven shell script for basic arithmetic operations.
+
+Code :
+
+read -p "Enter first number : " a
+read -p "Enter second number : " b
+option=0
+while [ $option -ne 5 ]
+do  
+    echo "Type 1 for addition"
+    echo "Type 2 for subtraction"
+    echo "Type 3 for multiplication"
+    echo "Type 4 for division"
+    echo "Type 5 to Exit"
+    echo "Select your option"
+    read option
+    case "$option" in
+        1)
+            res=$(($a + $b))
+            echo "Sum of $a and $b is $res";;
+        2)
+            res=$(($a - $b))
+            echo "Subtraction of $a and $b is $res";;
+        3)
+            res=$(($a * $b))
+            echo "Multiplication of $a and $b is $res";;
+        4)
+            res=$(($a / $b))
+            echo "Division of $a and $b is $res";;
+        5)
+            echo "Exiting..."
+            exit
+    esac
+done
+
+Output :
+
+Enter first number : 23
+Enter second number : 64
+Type 1 for addition
+Type 2 for subtraction
+Type 3 for multiplication
+Type 4 for division
+Type 5 to Exit
+Select your option
+1
+Sum of 23 and 64 is 87
+Type 1 for addition
+Type 2 for subtraction
+Type 3 for multiplication
+Type 4 for division
+Type 5 to Exit
+Select your option
+2
+Subtraction of 23 and 64 is -41
+Type 1 for addition
+Type 2 for subtraction
+Type 3 for multiplication
+Type 4 for division
+Type 5 to Exit
+Select your option
+3
+Multiplication of 23 and 64 is 1472
+Type 1 for addition
+Type 2 for subtraction
+Type 3 for multiplication
+Type 4 for division
+Type 5 to Exit
+Select your option
+4
+Division of 23 and 64 is 0
+Type 1 for addition
+Type 2 for subtraction
+Type 3 for multiplication
+Type 4 for division
+Type 5 to Exit
+Select your option
+5
+Exiting...

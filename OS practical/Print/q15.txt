@@ -1,0 +1,36 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Operating Systems
+Class : MCA 2
+
+Q15 : The script receives two file names as arguments, the script must check whether the files are same or not, if they are similar then delete the second file.
+
+Code :
+
+read -p "Enter name of first file : " file1
+read -p "Enter name of second file : " file2
+echo "Files in current directory are"
+ls
+if cmp -s "$file1" "$file2"
+then
+    echo "Files are same"
+    echo "Deleting the second file"
+    $(rm $file2)
+    echo "Second file deleted successfully "
+    echo "Files in current directory are"
+    ls
+else
+    echo "Files are different"
+fi
+
+Output :
+
+Enter name of first file : demo.txt
+Enter name of second file : demo2.txt
+Files in current directory are
+demo2.txt  demo3.txt  demo.txt	main.bash
+Files are same
+Deleting the second file
+Second file deleted successfully 
+Files in current directory are
+demo3.txt  demo.txt  main.bash

@@ -1,0 +1,77 @@
+choice=0
+emp_name=""
+emp_salary=0
+emp_id=""
+emp_desg=""
+while [ $choice -ne 5 ]
+do
+    echo "Type 1 to add employee details"
+    echo "Type 2 to display employee details"
+    echo "Type 3 to modify employee details"
+    echo "Type 4 to delete employee details"
+    echo "Type 5 to exit"
+    read -p "Enter your choice : " choice
+    echo " "
+    case "$choice" in
+    1)
+        read -p "Enter employee name : " emp_name
+        read -p "Enter employee id : " emp_id
+        read -p "Enter employee designation : " emp_desg
+        read -p "Enter employee salary : " emp_salary
+        echo "Employee details entered successfully"
+        echo " ";;
+    2)
+        if [ -z "$emp_name" ]
+        then
+            echo "Employee details are not set."
+        else
+            echo "Employee name : $emp_name"
+            echo "Employee ID : $emp_id"
+            echo "Employee designation : $emp_desg"
+            echo "Employee salary : $emp_salary"
+        fi
+        echo " ";;
+    3)
+        temp_choice=0
+        while [ $temp_choice -ne 5 ]
+        do
+            echo "Type 1 to change employee name"
+            echo "Type 2 to change employee id"
+            echo "Type 3 to change employee salary"
+            echo "Type 4 to change employee designation"
+            echo "Type 5 to go back"
+            read -p "Enter your choice : " temp_choice
+            case "$temp_choice" in
+            1)
+                read -p "Enter new name : " emp_name
+                echo " ";;
+            2)
+                read -p "Enter new id : " emp_id
+                echo " ";;
+            3)
+                read -p "Enter new salary : " emp_salary
+                echo " ";;
+            4)
+                read -p "Enter new designation : " emp_desg
+                echo " ";;
+            5)
+                exit;;
+            *)
+                echo "Invalid choice";;
+            esac
+        done;;
+    4)
+        emp_name=""
+        emp_salary=0
+        emp_id=""
+        emp_desg=""
+        echo "Employee details deleted successfully"
+        echo " ";;
+    5)
+        echo "Exiting ..."
+        exit;;
+    *)
+        echo "Invalid choice"
+        echo " ";;
+    esac
+done

@@ -1,0 +1,25 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Operating Systems
+Class : MCA 2
+
+Q7 : Write a script to print content of the file if file exits otherwise print appropriate message.
+
+Code :
+
+read -p "Enter filename : " fname
+if [ -e $fname ]
+    then
+        cat $fname
+else
+    echo "File does not exists"
+fi
+
+Output :
+
+Enter filename : demo.txt
+this is a demo text file.
+
+it is used for shell script programs.
+
+bye.

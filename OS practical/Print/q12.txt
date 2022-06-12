@@ -1,0 +1,22 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Operating Systems
+Class : MCA 2
+
+Q12 :
+
+Code :
+
+read -p "Enter distance in km : " d
+echo "$d km is equal to $(( d*1000 )) meters"
+echo "$d km is equal to $(( d*3281 )) feet"
+echo "$d km is equal to $(( d*39370 )) inches"
+echo "$d km is equal to $(( d*100000 )) centimeters"
+
+Output :
+
+Enter distance in km : 2
+2 km is equal to 2000 meters
+2 km is equal to 6562 feet
+2 km is equal to 78740 inches
+2 km is equal to 200000 centimeters

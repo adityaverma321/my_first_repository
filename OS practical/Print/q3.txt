@@ -1,0 +1,27 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Operating Systems
+Class : MCA 2
+
+Q3 : Write a script to reverse a six-digit number.
+
+Code :
+
+echo enter number
+read n
+temp=$n
+num=0
+while [ $n -gt 0 ]
+do
+	num=$(expr $num \* 10)
+	k=$(expr $n % 10)
+	num=$(expr $num + $k)
+	n=$(expr $n / 10)
+done
+echo reverse of $temp is $num
+
+Output :
+
+enter number
+456987
+reverse of 456987 is 789654

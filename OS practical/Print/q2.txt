@@ -1,0 +1,125 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Operating Systems
+Class : MCA 2
+
+Q2 : Write a menu driven shell script for remove, rename, copy and modify a file.
+
+Code :
+
+echo "Files in directory are"
+ls
+echo " "
+choice=0
+while [ $choice -ne 5 ]
+do
+    echo "Type 1 to delete a file"
+    echo "Type 2 to rename a file"
+    echo "Type 3 to copy a file"
+    echo "Type 4 to modify a file"
+    echo "Type 5 exit"
+    read -p "Enter your choice : " choice
+    case "$choice" in
+    1)
+        read -p "Enter filename : " fname
+        if [ -e $fname ]
+        then
+            rm $fname
+            echo "File deleted successfully"
+        else
+            echo "File does not exists"
+        fi
+        echo " "
+        ls
+        echo " ";;
+    2)
+        read -p "Enter filename : " fname
+        if [ -e $fname ]
+        then
+            read -p "Enter new filename : " newfname
+            mv $fname $newfname
+            echo "File renamed successfully"
+        else
+            echo "File does not exists"
+        fi
+        echo " "
+        ls
+        echo " ";;
+    3)
+        read -p "Enter filename : " fname
+        read -p "Enter new filename : " newfname 
+        if [ -e $fname ]
+        then
+            cp $fname $newfname
+            echo "File copied successfully"
+        else
+            echo "File does not exists"
+        fi
+        echo " "
+        ls
+        echo " ";;
+    4)
+        read -p "Enter filename : " fname
+        if [ -e $fname ]
+        then
+            vi $fname
+        else
+            echo "File does not exists"
+        fi
+        ls
+        echo " ";;
+    5)
+        echo "Exiting..."
+        exit;;
+    *)
+        echo "Invalid choice"
+    esac
+done
+
+Output :
+
+Files in directory are
+demo2.txt  demo3.txt  demo.txt	main.bash
+ 
+Type 1 to delete a file
+Type 2 to rename a file
+Type 3 to copy a file
+Type 4 to modify a file
+Type 5 exit
+Enter your choice : 1
+Enter filename : demo2.txt
+File deleted successfully
+ 
+demo3.txt  demo.txt  main.bash
+ 
+Type 1 to delete a file
+Type 2 to rename a file
+Type 3 to copy a file
+Type 4 to modify a file
+Type 5 exit
+Enter your choice : 2
+Enter filename : demo.txt
+Enter new filename : demo    aditya.txt
+File renamed successfully
+ 
+aditya.txt  demo3.txt  main.bash
+ 
+Type 1 to delete a file
+Type 2 to rename a file
+Type 3 to copy a file
+Type 4 to modify a file
+Type 5 exit
+Enter your choice : 3
+Enter filename : aditya.txt
+Enter new filename : aditya2.txt
+File copied successfully
+ 
+aditya2.txt  aditya.txt  demo3.txt  main.bash
+ 
+Type 1 to delete a file
+Type 2 to rename a file
+Type 3 to copy a file
+Type 4 to modify a file
+Type 5 exit
+Enter your choice : 5
+Exiting...

@@ -1,0 +1,77 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Operating Systems
+Class : MCA 2
+
+Q4 : Write a menu driven shell script to find area of rectangle, triangle, and circle.
+
+Code:
+
+option=0
+while [ $option -ne 4 ]
+do
+	echo "Main Menu"
+	echo "Press 1 to calculate area of rectangle"
+	echo "Press 2 to calculate area of triangle"
+	echo "Press 3 to calculate area of circle"
+	echo "Press 4 to exit"
+	read -p "Enter your choice : " option
+	case "$option" in
+		1)
+			read -p "Enter length of rectangle : " len
+			read -p "Enter breadth of rectangle : " bre
+			area=$(($len * $bre))
+			echo -e "Area of rectangle is $area\n";;
+		2)
+			read -p "Enter base length of triangle : " base
+			read -p "Enter height of triangle : " height
+			area=$((($base * $height)/2))
+			echo -e "Area of triangle is $area\n";;
+		3)
+			read -p "Enter radius of circle : " r
+			area=$((($r * $r)*(22/7)))
+			echo -e "Area of cricle is $area\n";;
+		4)
+			echo "Exiting..."
+			exit
+	esac
+done
+
+Output :
+
+Main Menu
+Press 1 to calculate area of rectangle
+Press 2 to calculate area of triangle
+Press 3 to calculate area of circle
+Press 4 to exit
+Enter your choice : 1
+Enter length of rectangle : 4
+Enter breadth of rectangle : 6
+Area of rectangle is 24
+
+Main Menu
+Press 1 to calculate area of rectangle
+Press 2 to calculate area of triangle
+Press 3 to calculate area of circle
+Press 4 to exit
+Enter your choice : 2
+Enter base length of triangle : 3
+Enter height of triangle : 6
+Area of triangle is 9
+
+Main Menu
+Press 1 to calculate area of rectangle
+Press 2 to calculate area of triangle
+Press 3 to calculate area of circle
+Press 4 to exit
+Enter your choice : 3
+Enter radius of circle : 5
+Area of cricle is 75
+
+Main Menu
+Press 1 to calculate area of rectangle
+Press 2 to calculate area of triangle
+Press 3 to calculate area of circle
+Press 4 to exit
+Enter your choice : 4
+Exiting...

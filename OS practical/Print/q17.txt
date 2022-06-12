@@ -1,0 +1,19 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Operating Systems
+Class : MCA 2
+
+Q17 : Two numbers are entered through the keyboard, find the power, one number raised to another.
+
+Code :
+
+read -p "Enter base value : " b
+read -p "Enter exponent value : " e
+res=$(( b**e ))
+echo "$b raised to $e is $res"
+
+Output :
+
+Enter base value : 5
+Enter exponent value : 3
+5 raised to 3 is 125

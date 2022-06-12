@@ -1,0 +1,109 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Operating Systems
+Class : MCA 2
+
+Q16 : Write a shell script to display the menu driven interface :- 1) list all files of the current directory 2) print the current directory 3) print the date 4) print the users otherwise display "Invalid Option".
+
+Code :
+
+choice=0
+while [ $choice -ne 5 ]
+do
+    echo "Type 1 to print all files of the current directory"
+    echo "Type 2 to print the current directory"
+    echo "Type 3 to print the date"
+    echo "Type 4 to print users"
+    echo "Type 5 to exit"
+    read -p "Enter your choice : " choice
+    echo " "
+    case "$choice" in
+        1)
+            echo "List of files in current directory are"
+            ls
+            echo -e "\n";;
+        2)
+            echo "Current directory is"
+            pwd
+            echo -e "\n";;
+        3)  
+            echo "Today's date is"
+            date +"%d/%m/%Y"
+            echo -e "\n";;
+        4)
+            echo "Current user is"
+            whoami
+            echo -e "\n";;
+        5)
+            echo "Exiting..."
+            exit;;
+        *)
+            echo "Invalid choice"
+            echo -e "\n";;
+    esac
+done
+
+Output :
+
+Type 1 to print all files of the current directory
+Type 2 to print the current directory
+Type 3 to print the date
+Type 4 to print users
+Type 5 to exit
+Enter your choice : 1
+ 
+List of files in current directory are
+main.bash
+
+
+Type 1 to print all files of the current directory
+Type 2 to print the current directory
+Type 3 to print the date
+Type 4 to print users
+Type 5 to exit
+Enter your choice : 2
+ 
+Current directory is
+/home
+
+
+Type 1 to print all files of the current directory
+Type 2 to print the current directory
+Type 3 to print the date
+Type 4 to print users
+Type 5 to exit
+Enter your choice : 3
+ 
+Today's date is
+11/06/2022
+
+
+Type 1 to print all files of the current directory
+Type 2 to print the current directory
+Type 3 to print the date
+Type 4 to print users
+Type 5 to exit
+Enter your choice : 4
+ 
+Current user is
+whoami: cannot find name for user ID 14073
+
+
+Type 1 to print all files of the current directory
+Type 2 to print the current directory
+Type 3 to print the date
+Type 4 to print users
+Type 5 to exit
+Enter your choice : 6
+ 
+Invalid choice
+
+
+Type 1 to print all files of the current directory
+Type 2 to print the current directory
+Type 3 to print the date
+Type 4 to print users
+Type 5 to exit
+Enter your choice : 5
+ 
+Exiting...

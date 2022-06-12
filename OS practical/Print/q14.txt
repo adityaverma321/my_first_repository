@@ -1,0 +1,30 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Operating Systems
+Class : MCA 2
+
+Q14 : If cost price and selling price of an item are entered through the keyboard, write a program to determine whether the seller has made profit or loss. Also determine how much profit/loss is made.
+
+Code :
+
+read -p "Enter cost price : " c
+read -p "Enter selling price : " s
+if [ $s -gt $c ]
+then
+    profit=$(( s-c ))
+    echo "The seller made a profit of $profit"
+elif [ $s -lt $c ]
+then
+    loss=$(( c-s ))
+    echo "The seller made a loss of $loss"
+else
+    echo "Cost price and Selling price are same"
+fi
+
+Output :
+
+Enter cost price : 2000
+Enter selling price : 2600
+The seller made a profit of 600
+
+
