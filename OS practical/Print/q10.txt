@@ -2,3 +2,23 @@ Name : Aditya Verma
 Roll No. : 42
 Subject : Operating Systems
 Class : MCA 2
+
+Q10 : Write a script to display the student marksheet in appropriate format.
+
+Code :
+
+echo -e "Subject \tInternal \tExternal \tTotal"
+echo -e "Maths\t\t26\t\t68\t\t94"
+echo -e "Science\t\t30\t\t60\t\t90"
+echo -e "English\t\t21\t\t56\t\t77"
+echo -e "Computer\t23\t\t64\t\t87"
+echo -e "Hindi\t\t22\t\t65\t\t87"
+
+Output :
+
+Subject 	Internal 	External 	Total
+Maths		26		68		94
+Science		30		60		90
+English		21		56		77
+Computer	23		64		87
+Hindi		22		65		87

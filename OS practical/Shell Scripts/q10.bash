@@ -1,0 +1,6 @@
+echo -e "Subject \tInternal \tExternal \tTotal"
+echo -e "Maths\t\t26\t\t68\t\t94"
+echo -e "Science\t\t30\t\t60\t\t90"
+echo -e "English\t\t21\t\t56\t\t77"
+echo -e "Computer\t23\t\t64\t\t87"
+echo -e "Hindi\t\t22\t\t65\t\t87"
