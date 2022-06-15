@@ -1,4 +1,35 @@
 Name : Aditya Verma
-Roll No. : 42
+Roll No : 42
 Subject : Operating Systems
 Class : MCA 2
+
+Q12 : 
+
+Code :
+
+for i in $@
+do
+        if [ -f $i ]
+        then
+                echo "$i is a file"
+                echo -e "Number of lines in file $i is : $(wc -l < $i)\n"
+        elif [ -d $i ]
+        then
+                echo -e "$i is a directory\n"
+        else
+                echo -e "$i is not a file or directory\n"
+        fi
+done
+
+Output :
+
+ubuntu@ubuntu:~$ bash q20.sh aditya.txt Public Documents demo.txt
+aditya.txt is a file
+Number of lines in file aditya.txt is : 10
+
+Public is a directory
+
+Documents is a directory
+
+demo.txt is a file
+Number of lines in file demo.txt is : 5
