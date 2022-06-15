@@ -2,3 +2,48 @@ Name : Aditya Verma
 Roll No. : 42
 Subject : Operating Systems
 Class : MCA 2
+
+Q18 : Write a script which has the functionality similar to head and tail 
+commands.
+
+Code :
+
+read -p "Enter file name : " file
+read -p "How many lines you want to read : " n
+totallines=$(wc -l $file | cut -d " " -f 1)
+i=1
+echo -e "\nTop $n lines are (Head functionality)"
+while read line
+do
+    if [ $i -le $n ]
+    then
+        echo $line
+        i=$(( i+1 ))
+    else
+        break
+    fi
+done<$file
+echo -e "\nBottom $n lines are (Tail functionality)"
+while read line
+do
+    awk "NR>=$(( totallines-n+1 ))"
+done<$file
+
+Output :
+
+Enter file name : demo.txt
+How many lines you want to read : 5
+
+Top 5 lines are (Head functionality)
+1 One
+2 Two
+3 Three
+4 Four
+5 Five
+
+Bottom 5 lines are (Tail functionality)
+16  Sixteen
+17  Seventeen
+18  Eighteen
+19  Nineteen
+20  Twenty

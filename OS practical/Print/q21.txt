@@ -2,3 +2,14 @@ Name : Aditya Verma
 Roll No. : 42
 Subject : Operating Systems
 Class : MCA 2
+
+Q21 : Display the dates falling on Sundays of the current month.
+
+Code :
+
+echo -n "Dates falling under Sunday of current month are : "
+cal | cut -c 1,2 | tail -5 | tr "\n" " "
+
+Output :
+
+Dates falling under Sunday of current month are :  5 12 19 26

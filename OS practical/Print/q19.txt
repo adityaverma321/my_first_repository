@@ -2,3 +2,28 @@ Name : Aditya Verma
 Roll No. : 42
 Subject : Operating Systems
 Class : MCA 2
+
+Q19 : The script displays a list of all files in the current directory to which you have read, write and execute permissions.
+
+Code :
+
+echo -e "Files in current directory having read, write, and execute permission are\n"
+for file in *
+do
+    if [ -f $file ]
+    then
+        if [ -r $file -a -w $file -a -x $file ]
+        then
+            ls -l $file
+        fi
+    fi
+done
+
+Output :
+
+Files in current directory having read, write, and execute permission are
+
+-rwxrwxrwx 1 root root 89 Jun 14 13:38 aditya.txt
+-rwxrwxrwx 1 root root 72 Jun 14 13:38 demo2.txt
+-rwxrwxrwx 1 root root 52 Jun 14 13:38 demo.txt
+-rwxrwxrwx 1 root root 239 Jun 14 13:38 main.bash
