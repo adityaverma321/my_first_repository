@@ -1,0 +1,29 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+JAVA Practice Programs
+
+Code : 
+
+class Main{
+    public static void main(String args[ ] ) {
+        int count;
+        String aString;
+        count = args.length;
+        System.out.println( "Number of arguments ="+ count);
+        for(int i = 0; i < count; i++) {
+            aString = args[0];
+            System.out.println( "args["+i+"]"+"="+ aString);
+        }
+    }
+}
+
+Output :
+
+Number of arguments =5
+args[0]=Kolkata
+args[1]=Kolkata
+args[2]=Kolkata
+args[3]=Kolkata
+args[4]=Kolkata

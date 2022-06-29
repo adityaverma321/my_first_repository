@@ -1,0 +1,380 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+Q4 : Develop a basic graphics package.
+    a. Within the package create a abstract class Shape having function print().
+    b. Create two subclasses Two Dimensional and three Dimensional from Shape class .
+    c. These two subclasses also should be abstract.
+    d. Implement the print method in the subclasses Square, Circle, Cylinder, Cube, to output
+    the type and dimension of the shape Also include area and volume methods to calculate
+    the area and volume of the concrete shapes
+    e. Write a driver program that creates various shapes and put them in an array of Shape
+    Use polymorphism to print and calculate the area and volume of objects stored in array.
+
+Code :
+
+package graphics;
+public abstract class Shape {
+    abstract  public void print();
+}
+package graphics;
+package graphics;
+abstract class TwoD extends Shape{
+     abstract public void  print();
+}
+package graphics;
+abstract class ThreeD extends Shape{
+    abstract public void  print();
+}
+public class Square extends TwoD{
+
+    float l;
+    public Square(){
+    }
+    public Square(float l)
+    {
+        this.l=l;
+    }
+    public void print()
+    {
+        System.out.println("Two Dimensional ");
+    }
+    public static  float area(float l)
+    {
+        return (l*l);
+    }
+    public static float volume(float l)
+    {
+        return (l*l*l);
+    }
+}
+package graphics;
+public class Circle extends TwoD{
+    float r;
+    public Circle()
+    {
+
+    }
+    public Circle(float r)
+    {
+        this.r=r;
+    }
+    public void print()
+    {
+        System.out.println("Two Dimensional ");
+    }
+    public static float area(float r)
+    {
+        return (float)(Math.PI*r*r);
+    }
+}
+package graphics;
+public class Cylinder extends ThreeD {     
+     float r,h;
+     public Cylinder(){
+     }
+     public Cylinder(float r,float h)
+     {
+          this.r=r;
+          this.h=h;
+     }
+     public void  print(){
+           System.out.println("Three Dimensional");
+     }
+     public static float area(float r,float h){
+           float area=(float)((2*Math.PI*r)*(r+h));
+           return area;
+     }
+     public static float volume(float r,float h){
+          float volume=(float)(Math.PI*r*r*h);
+          return volume;
+     }
+}
+package graphics;
+public class Cube extends ThreeD {
+    float l;
+    public Cube()
+    {
+
+    }
+    public Cube(float l)
+    {
+         this.l=l;
+       
+    }
+    public void  print(){
+          System.out.println("Three Dimensional");
+    }
+    public static float area(float l){
+          float area=6*l*l;
+          return area;
+    }
+    public static float volume(float l){
+         float volume=l*l*l;
+         return volume;
+    }
+}
+import graphics.*;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+public class Main {
+    public static int menu() {
+        System.out.println();
+        System.out.println("1. Area");
+        System.out.println("2. Volume");
+        System.out.println("3. Return to main menu");
+        System.out.print("Enter your choice: ");
+        Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+        return choice;
+    }
+    public static int mainMenu() {
+        System.out.println();
+        System.out.println("1. Square");
+        System.out.println("2. circle");
+        System.out.println("3. Cylinder");
+        System.out.println("4. Cube");
+
+        System.out.println("5. Exit");
+        System.out.print("Enter your choice: ");
+        Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+        return choice;
+    }
+
+    public static void main(String[] args) throws Exception {
+        int choiceForMainMenu = 0;
+        int choiceForCylinderMenu = 0;
+        int choiceForCubeMenu = 0;
+        char choice;
+
+        do {
+            System.out.println("--------Main menu--------");
+            choiceForMainMenu = mainMenu();
+            switch (choiceForMainMenu) {
+                case 1:// Square
+                    do {
+                        System.out.println("--------Area of Square--------");
+
+                        {
+
+                            System.out.print(
+                                    "Enter the length of  square  --> ");
+                            {
+                                Scanner sc = new Scanner(System.in);
+                                float l = sc.nextFloat();
+                                System.out.println("The area of square is " + Square.area(l));
+                            }
+                            System.out.println("Do you want to continue for finding area of another square? [y/n]");
+                            Scanner sc = new Scanner(System.in);
+                            choice = sc.next().charAt(0);
+                        }
+
+                    } while (choice == 'y');
+                    break;
+                case 2:// Circle
+
+                    do {
+                        System.out.println("--------Area of Circle--------");
+
+                        {
+
+                            System.out.print(
+                                    "Enter the radius of  Circle  --> ");
+                            {
+                                Scanner sc = new Scanner(System.in);
+                                float r = sc.nextFloat();
+                                System.out.println("The area of Circle is " + Circle.area(r));
+                            }
+                            System.out.println("Do you want to continue for finding area of another cirlce? [y/n]");
+                            Scanner sc = new Scanner(System.in);
+                            choice = sc.next().charAt(0);
+                        }
+
+                    } while (choice == 'y');
+                    break;
+                case 3:// Cylinder
+                    do {
+                        System.out.println("--------Cylinder--------");
+                        Scanner sc = new Scanner(System.in);
+                        choiceForCylinderMenu = menu();
+                        switch (choiceForCylinderMenu) {
+                            case 1:// area of Cylinder
+                            {
+                                System.out.println("-------------The area of Cylinder-------------");
+                                System.out.print(
+                                        "Enter the radius  and height(seperate them with space(' ') ex: 1 3 --> ");
+
+                                String str = sc.nextLine();
+                                StringTokenizer rh = new StringTokenizer(str, " ");
+                                float r = Float.parseFloat(rh.nextToken());
+                                float h = Float.parseFloat(rh.nextToken());
+                                System.out.println("The area of cylinder is " + Cylinder.area(r, h));
+                            }
+                                break;
+                            case 2:// volume of Cylinder
+                            {
+                                System.out.println("-------------The volume of Cylinder-------------");
+                                System.out.print(
+                                        "Enter the radius  and height(seperate them with space(' ') ex: 1 3 --> ");
+
+                                String str = sc.nextLine();
+                                StringTokenizer rh = new StringTokenizer(str, " ");
+                                float r = Float.parseFloat(rh.nextToken());
+                                float h = Float.parseFloat(rh.nextToken());
+                                System.out.println("The volume of cylinder is " + Cylinder.volume(r, h));
+                            }
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                System.out.println("Invalid choide");
+                                break;
+                        }
+                    } while (choiceForCylinderMenu != 3);
+                    break;
+                case 4:// Cube
+                    do {
+                        System.out.println("--------Cube--------");
+                        Scanner sc = new Scanner(System.in);
+                        choiceForCubeMenu = menu();
+                        switch (choiceForCubeMenu) {
+                            case 1:// area of Cube
+                            {  
+                                System.out.println("-------------The area of Cube-------------");
+                                System.out.print(
+                                        "Enter the length of cube ");
+
+                                float l = sc.nextFloat();
+
+                                System.out.println("The area of Cube is " + Cube.area(l));
+                            }
+                                break;
+                            case 2:// volume of Cube
+                            {
+                                System.out.println("-------------The volume of Cube-------------");
+                                System.out.print(
+                                        "Enter the length of cube ");
+
+                                float l = sc.nextFloat();
+
+                                System.out.println("The volume of Cube is " + Cube.volume(l));
+                            }
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                System.out.println("Invalid choide");
+                                break;
+                        }
+                    } while (choiceForCubeMenu != 3);
+                    break;
+                case 5: // Exit
+                    break;
+
+                default:
+                    System.out.println("Invalid choice");
+                    break;
+            }
+        } while (choiceForMainMenu != 5);
+    }
+}
+
+output
+
+                            --------Main menu--------
+
+                            1. Square
+                            2. circle
+                            3. Cylinder
+                            4. Cube
+                            5. Exit
+                            Enter your choice: 1
+                            --------Area of Square--------
+                            Enter the length of  square  --> 3
+                            The area of square is 9.0
+                            Do you want to continue for finding area of another square? [y/n]
+                            y
+                            --------Area of Square--------
+                            Enter the length of  square  --> 4
+                            The area of square is 16.0
+                            Do you want to continue for finding area of another square? [y/n]
+                            n
+                            --------Main menu--------
+
+                            1. Square
+                            2. circle
+                            3. Cylinder
+                            4. Cube
+                            5. Exit
+                            Enter your choice: 2
+                            --------Area of Circle--------
+                            Enter the radius of  Circle  --> 1
+                            The area of Circle is 3.1415927
+                            Do you want to continue for finding area of another cirlce? [y/n]
+                            n
+                            --------Main menu--------
+
+                            1. Square
+                            2. circle
+                            3. Cylinder
+                            4. Cube
+                            5. Exit
+                            Enter your choice: 3
+                            --------Cylinder--------
+
+                            1. Area
+                            2. Volume
+                            3. Return to main menu
+                            Enter your choice: 1
+                            -------------The area of Cylinder-------------
+                            Enter the radius  and height(seperate them with space(' ') ex: 1 3 --> 1 1
+                            The area of cylinder is 12.566371
+                            --------Cylinder--------
+
+                            1. Area
+                            2. Volume
+                            3. Return to main menu
+                            Enter your choice: 2
+                            -------------The volume of Cylinder-------------
+                            Enter the radius  and height(seperate them with space(' ') ex: 1 3 --> 1 1
+                            The volume of cylinder is 3.1415927
+                            --------Cylinder--------
+
+                            1. Area
+                            2. Volume
+                            3. Return to main menu
+                            Enter your choice: 3
+                            --------Main menu--------
+
+                            1. Square
+                            2. circle
+                            3. Cylinder
+                            4. Cube
+                            5. Exit
+                            Enter your choice: 4
+                            --------Cube--------
+
+                            1. Area
+                            2. Volume
+                            3. Return to main menu
+                            Enter your choice: 1
+                            -------------The area of Cube-------------
+                            Enter the length of cube 2
+                            The area of Cube is 24.0
+                            --------Cube--------
+
+                            1. Area
+                            2. Volume
+                            3. Return to main menu
+                            Enter your choice: 2
+                            -------------The volume of Cube-------------
+                            Enter the length of cube 3
+                            The volume of Cube is 27.0
+                            --------Cube--------
+
+                            1. Area
+                            2. Volume
+                            3. Return to main menu

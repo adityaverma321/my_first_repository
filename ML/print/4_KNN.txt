@@ -1,0 +1,49 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Machine Learning
+Class : MCA 2
+
+K-Nearest Neighbour
+
+Code :
+
+import pandas as pd
+import numpy as np
+
+dataset = pd.read_excel('knn.xlsx')
+df = pd.DataFrame(dataset)
+#dataset.head()
+
+new_speed = float(input("Enter the speed: "))
+new_agility = float(input("Enter the agility: "))
+
+while(True):
+    k = int(input("Enter the value of k: "))
+    if (k%2) != 0:
+        break
+
+# implement knn to find class of the new data
+def knn(df, new_speed, new_agility, k):
+    # calculate distance between new data and all data
+    df['distance'] = np.sqrt(np.square(df.SPEED - new_speed) + np.square(df.AGILITY - new_agility))
+    # sort the dataframe by distance
+    df = df.sort_values(by='distance')
+    # get the class of the k nearest data
+    df = df.iloc[:k, :]
+    df = df.groupby('DRAFT').count()
+    df = df.sort_values(by='DRAFT')
+    return df.index[0]
+
+if(knn(df, new_speed, new_agility, k) == "yes"):
+    print("Yes the player is drafted")
+else:
+    print("No the player is not drafted")
+
+Output :
+
+Enter the speed: 6.75
+
+Enter the agility: 5
+
+Enter the value of k: 3
+Yes the player is drafted

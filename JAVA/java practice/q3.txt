@@ -1,0 +1,34 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+JAVA Practice Programs
+
+Code :
+
+class AnotherFirstClass {
+	static int idNo = 777;
+		public static void print( ) {
+		System.out.println ( " First Class citizen" + idNo );
+	}
+}
+class AnotherSecondClass {
+	static int idNo = 888;
+		public static void print( ) {
+		System.out.println ( " Second Class citizen " + idNo) ;
+	}
+}
+public class Main {
+	public static void main( String args[ ] ) {
+		AnotherFirstClass female = new AnotherFirstClass();
+		AnotherSecondClass male = new AnotherSecondClass();
+		System.out.print("People from Java World");
+		female.print( );
+		male.print( );
+	}
+}
+
+Output :
+
+People from Java World First Class citizen777
+ Second Class citizen 888

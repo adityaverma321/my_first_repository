@@ -1,0 +1,35 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+JAVA Practice Programs
+
+Code :
+
+class Main {
+public static void main(String args[]) {
+myMethod(10); // pass positive integer
+}
+
+void myMethod( int counter)
+{
+if(counter == 0)
+return;
+else
+{
+System.out.println("hello" + counter);
+
+
+myMethod(--counter);
+System.out.println(""+counter);
+return;
+}
+}
+}
+
+Output :
+
+Main.java:3: error: non-static method myMethod(int) cannot be referenced from a static context
+myMethod(10); // pass positive integer
+^
+1 error

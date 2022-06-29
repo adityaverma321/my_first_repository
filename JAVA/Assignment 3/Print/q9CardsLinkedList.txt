@@ -1,0 +1,46 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+Q9 : Write a program to store a deck of 52 cards in a linked list in random sequence using a Random class
+    object. You can represent a card as a two-character string—”1C” for the ace of clubs, “JD” for the
+    jack of diamonds, and so on. Output the cards from the linked list as four hands of 13 cards.
+
+Code :
+
+import java.util.*;
+public class CardsLinkedList {
+    public static void main(String args[]) {
+        ArrayList cardNo = new ArrayList<>();
+        String a=Character.toString('A');
+        cardNo.add(a);
+        for (Integer i = 1; i < 10; i++) {
+            String s=String.valueOf(i+1);
+            cardNo.add(s);
+        }
+        cardNo.add("J");
+        cardNo.add("K");
+        cardNo.add("Q");
+        ArrayList cardType = new ArrayList<>();
+        cardType.add("C");
+        cardType.add("H");
+        cardType.add("D");
+        cardType.add("S");
+        ArrayList allcards = new ArrayList();
+        for (Object no : cardNo) {
+            for (Object t : cardType) {
+                   String cardno=(String)no;
+                   String cardtype=(String)t;
+                   String card=cardno+cardtype;
+                   allcards.add(card);
+            }
+        }
+        Collections.shuffle(allcards);
+        System.out.print(allcards);
+    }
+}
+
+Output :
+
+[5S, 9H, 3H, 4D, 6D, 3C, AH, KH, 5D, QH, 4H, 6C, QC, QS, 9S, KC, AD, 2S, 7D, 10H, 10D, AS, AC, 3S, 3D, 10S, KS, 6H, 2C, 2D, 8S, JS, 9C, QD, 8C, 6S, 9D, 4S, JD, 5C, 2H, 8D, JC, 7S, 8H, 7C, 5H, 7H, JH, 10C, 4C, KD]

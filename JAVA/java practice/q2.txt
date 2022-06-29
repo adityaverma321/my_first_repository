@@ -1,0 +1,46 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+JAVA Practice Programs
+
+Code :
+
+Ex2
+/*
+Application with more than one classes within same java file
+*/
+//Edit PeopleApp.java
+class FirstClass {
+    int idNo;
+    idNo = 555;
+    public static void print( ) {
+        System.out.println ( " First Class citizen" + idNo );
+    }
+}
+class SecondClass {
+    int idNo;
+    idNo = 111;
+    public static void print( ) {
+        System.out.println ( " Second Class citizen " + idNo) ;
+    }
+}
+public class PeopleApp {
+    FirstClass female;
+    SecondClass male;
+    public static void main( String args[ ] ) {
+        System.out.print("People from Java World");
+        female.print( );
+        male.print( );
+    }
+}
+
+Output :
+
+Main.java:3: error:  expected
+idNo = 555;
+    ^
+Main.java:10: error:  expected
+idNo = 111;
+    ^
+2 errors

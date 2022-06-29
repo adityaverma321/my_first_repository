@@ -1,0 +1,113 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+Q3 : Develop the Figure application in given steps.
+    a. Design an interface IFig having the following methods:
+        i. public void calcAreaQ;
+        ii. public void calcVolumeO;
+        iii. It must also have the variable pi of the type double and having a value 3.1428.
+    b. Design an abstract class called Figure.
+        i. It must have three attributes r. a and v of data type double.
+        ii. It has abstract methods:
+            1. public abstract void dispAreaQ;
+            2. public abstract void dispVolumeO;
+    c. Design three classes Cone, Sphere and Cylinder. Each of them, should extend the Figure class and implement the IFig interface.
+    d. Write a test program to demonstrate polymorphism
+
+Code :
+
+interface IFig{
+    public void calcAreaQ();
+    public void calcVolumnO();
+    final double pi = 3.1428;
+}
+abstract class Figure{
+    double r, a, v;
+    public abstract void displayAreaQ();
+    public abstract void displayVolumnO();
+}
+class Cone extends Figure implements IFig{
+    Cone(double r, double a){
+        this.r = r;
+        this.a = a;
+    }
+    public void calcAreaQ(){
+        this.a = pi * r * r * (1 + (a / 2));
+    }
+    public void calcVolumnO(){
+        this.v = pi * r * r * a / 3;
+    }
+    public void displayAreaQ(){
+        System.out.println("Area of Cone: " + a);
+    }
+    public void displayVolumnO(){
+        System.out.println("Volumn of Cone: " + v);
+    }    
+}
+class Sphere extends Figure implements IFig{
+    Sphere(double r){
+        this.r = r;
+    }
+    public void calcAreaQ(){
+        this.a = 4 * pi * r * r;
+    }
+    public void calcVolumnO(){
+        this.v = 4 * pi * r * r * r / 3;
+    }
+    public void displayAreaQ(){
+        System.out.println("Area of Sphere: " + a);
+    }
+    public void displayVolumnO(){
+        System.out.println("Volumn of Sphere: " + v);
+    }
+}
+class Cylinder extends Figure implements IFig{
+    Cylinder(double r, double h){
+        this.r = r;
+        this.a = 2 * pi * r * h;
+    }
+    public void calcAreaQ(){
+        this.a = 2 * pi * r * r;
+    }
+    public void calcVolumnO(){
+        this.v = pi * r * r * a;
+    }
+    public void displayAreaQ(){
+        System.out.println("Area of Cylinder: " + a);
+    }
+    public void displayVolumnO(){
+        System.out.println("Volumn of Cylinder: " + v);
+    }
+}
+public class Shape{
+    public static void main(String args[]){
+        Cone coneObj = new Cone(5,10);
+        coneObj.calcAreaQ();
+        coneObj.calcVolumnO();
+        coneObj.displayAreaQ();
+        coneObj.displayVolumnO();
+
+        Sphere sphereObj = new Sphere(5);
+        sphereObj.calcAreaQ();
+        sphereObj.calcVolumnO();
+        sphereObj.displayAreaQ();
+        sphereObj.displayVolumnO();
+
+        Cylinder cylinderObj = new Cylinder(5,15);
+        cylinderObj.calcAreaQ();
+        cylinderObj.calcVolumnO();
+        cylinderObj.displayAreaQ();
+        cylinderObj.displayVolumnO();
+    }
+}
+
+Output :
+
+Area of Cone: 471.41999999999996
+Volumn of Cone: 12346.489799999998
+Area of Sphere: 314.28
+Volumn of Sphere: 523.8
+Area of Cylinder: 157.14
+Volumn of Cylinder: 12346.489799999998

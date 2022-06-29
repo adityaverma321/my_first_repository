@@ -1,0 +1,25 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+JAVA Practice Programs
+
+Code :
+
+class Main {
+    public static void main(String args[]) {
+        for(int i=0; i<10; i++) {
+            System.out.print(i + " ");
+            if (i%2 == 0) continue;
+            System.out.println("");
+        }
+    }
+}
+
+Output :
+
+0 1 
+2 3 
+4 5 
+6 7 
+8 9 

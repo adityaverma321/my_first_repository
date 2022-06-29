@@ -1,0 +1,26 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+JAVA Practice Programs
+
+Ex1
+
+/*
+Example java program without any class
+*/
+// Edit HelloNoClass.java
+
+public static void main (String args[ ] ) {
+    System.out.println( "Hello Classless Java!]);
+}
+
+Output :
+
+Main.java:8: error: class, interface, or enum expected
+public static void main (String args[ ] ) {
+              ^
+Main.java:9: error: unclosed string literal
+System.out.println( "Hello Classless Java!]);
+                    ^
+2 errors

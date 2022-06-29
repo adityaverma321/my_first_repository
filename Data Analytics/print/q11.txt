@@ -1,0 +1,38 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Data Analytics
+Class : MCA 2
+
+Question 11 : Find mean, median, mode, quartile, range, IQR for univariate data
+
+Code :
+
+import numpy as np
+data = [27,25,20,15,30,34,28,25]
+print("Original data : ",data)
+mean = sum(data)/len(data)
+print("Mean is : ",mean)
+data.sort()
+median = np.percentile(data,50)
+print("Median is : ",median)
+mode = max(set(data), key=data.count)
+print("Mode is : ",mode)
+data_range = max(data) - min(data)
+print("Range is : ",data_range)
+q1 = np.percentile(data,25)
+q3 = np.percentile(data,75)
+print("First quartile is : ",q1)
+print("Thrid quartile is : ",q3)
+IQR = q3-q1
+print("Inter-Quartile Range is : ",IQR)
+
+Output :
+
+Original data :  [27, 25, 20, 15, 30, 34, 28, 25]
+Mean is :  25.5
+Median is :  26.0
+Mode is :  25
+Range is :  19
+First quartile is :  23.75
+Thrid quartile is :  28.5
+Inter-Quartile Range is :  4.75

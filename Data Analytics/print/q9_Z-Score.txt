@@ -1,0 +1,44 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : Data Analytics
+Class : MCA 2
+
+Question 9 : Outlier dectection using Z-Score
+
+Code :
+
+# Outlier detection using Z-Score
+import pandas as pd
+import numpy as np
+data = [27,25,20,15,30,34,28,25]
+outliers = []
+z_score_list = []
+# print("Original data: ", data)
+mean = sum(data)/len(data)
+mean_dev = [i - mean for i in data]
+std_dev = np.std(mean_dev)
+# print("Mean deviation: ", mean_dev)
+# print("Standard deviation: ", std_dev)
+# print(len(mean_dev))
+for i in mean_dev:
+    z_score = i/std_dev
+    z_score_list.append("%.1f" % z_score)
+    if abs(z_score) > 3:
+        outliers.append(i)
+df = pd.DataFrame(zip(data,mean_dev,z_score_list),columns=['Data','Mean Deviation','Z-Score'])
+print(df,"\n")
+print("Outliers: ", outliers)
+
+Output :
+
+    Data  Mean Deviation Z-Score
+0    27             1.5     0.3
+1    25            -0.5    -0.1
+2    20            -5.5    -1.0
+3    15           -10.5    -1.9
+4    30             4.5     0.8
+5    34             8.5     1.5
+6    28             2.5     0.5
+7    25            -0.5    -0.1 
+
+Outliers:  []

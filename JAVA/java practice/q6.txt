@@ -1,0 +1,30 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+JAVA Practice Programs
+
+Code :
+
+class WhileDemo {
+    public static void main(String[] args){
+        int count = 1;
+        while (count < 11) {
+            System.out.println("Count is: " + count);
+            count++;
+        }
+    }
+}
+
+Output :
+
+Count is: 1
+Count is: 2
+Count is: 3
+Count is: 4
+Count is: 5
+Count is: 6
+Count is: 7
+Count is: 8
+Count is: 9
+Count is: 10

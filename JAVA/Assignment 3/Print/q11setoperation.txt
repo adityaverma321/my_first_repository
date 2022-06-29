@@ -1,0 +1,142 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+Q11 : Create two hash sets {"George", "Jim", "John", "Blake", "Kevin", "Michael"} and {"George", "Katie",
+"Kevin", "Michelle", "Ryan"}, and find their union, difference, and intersection.
+
+Code :
+
+import java.util.*;
+public class SetOperations {
+    public static void main(String args[]) {
+        Set<String> set1 = new HashSet<String>();
+        System.out.println("Enter total number to be add in set 1");
+        Scanner sc = new Scanner(System.in);
+        int length = sc.nextInt();
+
+        for (int i = 0; i < length; i++) {
+            String j = sc.next();
+            set1.add(j);
+        }
+        Set<String> set2 = new HashSet<String>();
+        System.out.println("Enter total number to be add in set 2");
+
+        length = sc.nextInt();
+
+        for (int i = 0; i < length; i++) {
+            String j = sc.next();
+            set2.add(j);
+        }
+
+        System.out.println("--menu--");
+        System.out.println("1. Union");
+        System.out.println("1. Intersection");
+        System.out.println("1. Difference");
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1:
+                HashSet union = new HashSet(set1);
+                for (Object o : set2) {
+                    union.add(o);
+                }
+                System.out.println(union);
+                break;
+            case 2:
+                    
+                HashSet intersection = new HashSet();
+             
+                for (Object oS2 : set2) {
+                    if (set1.contains(oS2)) {
+                        intersection.add(oS2);
+                    }
+                }
+            
+                System.out.println(intersection);
+                break;
+            case 3:
+                HashSet difference = new HashSet(set1);
+                for (Object o : set2) {
+                    if (set1.contains(o)) {
+                        difference.remove(o);
+                    }
+                }
+                System.out.println(difference);
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+Output :
+
+Enter total number to be add in set 1
+6
+geogre
+jim
+john
+blake
+keving
+michael
+Enter total number to be add in set 2
+5
+george
+katie
+kevin
+michelle
+ryan
+--menu--
+1. Union
+1. Intersection
+1. Difference
+1
+[michael, ryan, kevin, blake, michelle, george, john, keving, katie, geogre, jim]
+
+
+D:\>java SetOperations
+Enter total number to be add in set 1
+6
+George
+Jim
+John
+Blake
+Kevin
+Michael
+Enter total number to be add in set 2
+5
+George
+Katie
+Kevin
+Michelle
+Ryan
+--menu--
+1. Union
+1. Intersection
+1. Difference
+2
+[Kevin, George]
+
+D:\>java SetOperations
+Enter total number to be add in set 1
+6
+George
+Jim
+John
+Blake
+Kevin
+Michael
+Enter total number to be add in set 2
+5
+George
+Katie
+Kevin
+Machelle
+Ryam
+--menu--
+1. Union
+1. Intersection
+1. Difference
+3
+[Blake, Michael, John, Jim]

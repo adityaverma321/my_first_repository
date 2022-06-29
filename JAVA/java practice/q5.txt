@@ -1,0 +1,45 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+JAVA Practice Programs
+
+Code :
+
+import java.io.*;
+
+class Main{
+    public static void main(String args[ ] ) {
+    Float number1 = new Float(0);
+    Float number2 = new Float(0);
+    
+    DataInputStream in = new DataInputStream(System.in);
+    String tempString;
+    
+    System.out.print("Enter a number: ");
+    System.out.flush();
+    tempString = in.readLine();
+    number1 = Float.valueOf(tempString);
+    
+    System.out.print("Enter another number: ");
+    System.out.flush();
+    tempString = in.readLine();
+    number2 = Float.valueOf(tempString);
+    
+    System.out.println("Number 1: "+number1);
+    System.out.println("Number 2: "+number2);
+
+    }
+}
+
+Output :
+
+Main.java:13: error: unreported exception IOException; must be caught or declared to be thrown
+    tempString = in.readLine();
+                            ^
+Main.java:18: error: unreported exception IOException; must be caught or declared to be thrown
+    tempString = in.readLine();
+                            ^
+Note: Main.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+2 errors

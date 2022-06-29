@@ -1,0 +1,144 @@
+Name : Aditya Verma
+Roll No. : 42
+Subject : JAVA Programming
+Class : MCA 2
+
+Q7 : Create a HashSet of 5 names. Write a menu driven program to do the following:
+    a. Add a new name
+    b. Remove a name
+    c. Search a name
+    d. Display all the names (display in reverser order also – use ListIterator )
+    e. Display number of elements in hashset
+
+Code :
+
+import java.util.*;
+public class HashSet2 {
+    public static void main(String args[]){
+        HashSet<String> hs = new HashSet<String>();
+        int choice;
+        Scanner sc = new Scanner(System.in);
+        do{
+            System.out.println("1. Add a name");
+            System.out.println("2. Remove a name");
+            System.out.println("3. Search a name");
+            System.out.println("4. Display all names");
+            System.out.println("5. Display number of names in set");
+            System.out.println("6. Exit");
+            System.out.print("Enter your choice : ");
+            choice = sc.nextInt();
+            switch(choice){
+                case 1:
+                    System.out.print("Enter new name : ");
+                    hs.add(sc.next());
+                    break;
+                case 2:
+                    System.out.print("Enter name to be removed : ");
+                    hs.remove(sc.next());
+                    break;
+                case 3:
+                    System.out.print("Enter name to be searched : ");
+                    if(hs.contains(sc.next()))
+                        System.out.println("Found");
+                    else
+                        System.out.println("Not found");
+                    break;
+                case 4:
+                    System.out.println("All names are :");
+                    for (String s : hs)
+                        System.out.println(s);
+                    break;
+                case 5:
+                    //display number of elements in the set
+                    System.out.println("Number of elements in the set is "+hs.size());
+                    break;
+                case 6:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Wrong choice");
+            }
+    }while(choice!=6);
+}
+}
+
+Output :
+
+1. Add a name
+2. Remove a name
+3. Search a name
+4. Display all names
+5. Display number of names in set
+6. Exit
+Enter your choice : 1
+Enter new name : Parth
+1. Add a name
+2. Remove a name
+3. Search a name
+4. Display all names
+5. Display number of names in set
+6. Exit
+Enter your choice : 1
+Enter new name : Shivam
+1. Add a name
+2. Remove a name
+3. Search a name
+4. Display all names
+5. Display number of names in set
+6. Exit
+Enter your choice : 1
+Enter new name : Assandas
+1. Add a name
+2. Remove a name
+3. Search a name
+4. Display all names
+5. Display number of names in set
+6. Exit
+Enter your choice : 4
+All names are :
+Parth
+Shivam
+Assandas
+1. Add a name
+2. Remove a name
+3. Search a name
+4. Display all names
+5. Display number of names in set
+6. Exit
+Enter your choice : 3
+Enter name to be searched : Parth
+Found
+1. Add a name
+2. Remove a name
+3. Search a name
+4. Display all names
+5. Display number of names in set
+6. Exit
+Enter your choice : 2
+Enter name to be removed : Assandas
+1. Add a name
+2. Remove a name
+3. Search a name
+4. Display all names
+5. Display number of names in set
+6. Exit
+Enter your choice : 4
+All names are :
+Parth
+Shivam
+1. Add a name
+2. Remove a name
+3. Search a name
+4. Display all names
+5. Display number of names in set
+6. Exit
+Enter your choice : 5
+Number of elements in the set is 2
+1. Add a name
+2. Remove a name
+3. Search a name
+4. Display all names
+5. Display number of names in set
+6. Exit
+Enter your choice : 6
+Exiting...
